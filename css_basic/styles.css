@@ -1,0 +1,39 @@
+/* --- Flexbox Layout based on User Requirements --- */
+
+/* 1. Both container tags, <body> and <main> must be told that they are containers to flexible boxes. */
+body, main {
+    display: flex;
+}
+
+/* 2. <body> contains a column of three boxes (<header>, <main> and <footer>), therefore you must apply flex-direction: column. */
+body {
+    min-height: 100vh; /* Ensure body takes full height of the viewport */
+    flex-direction: column;
+}
+
+/* 3. <main> contains a row of 2 boxes (<article> and <aside>), so you must apply flex-direction: row. */
+main {
+    flex-direction: row;
+}
+
+/* 4. Ensure the <main> tag keeps an automatic height and width, by applying the flex: auto property to it. */
+main {
+    flex: auto;
+    overflow: hidden; /* Prevent article/aside scrollbars from affecting main */
+}
+
+/* 5. Content (<article>) takes ⅔ of the width and aside takes ⅓. */
+/* Apply flex: 2 to <article> (2 boxes) */
+article {
+    flex: 2;
+}
+
+/* Apply flex: 1 to <aside> (1 box) */
+aside {
+    flex: 1;
+}
+
+/* 6. Ensure the user can scroll within <article> and <aside>. */
+article, aside {
+    overflow-y: auto;
+}
