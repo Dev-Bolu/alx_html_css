@@ -1,39 +1,82 @@
 /* --- Flexbox Layout based on User Requirements --- */
 
-/* 1. Both container tags, <body> and <main> must be told that they are containers to flexible boxes. */
+/* 1. Both container tags, <body> and <main> must be flex containers */
 body, main {
     display: flex;
 }
 
-/* 2. <body> contains a column of three boxes (<header>, <main> and <footer>), therefore you must apply flex-direction: column. */
+/* 2. Body contains header + main + footer stacked vertically */
 body {
-    min-height: 100vh; /* Ensure body takes full height of the viewport */
+    min-height: 100vh;
     flex-direction: column;
 }
 
-/* 3. <main> contains a row of 2 boxes (<article> and <aside>), so you must apply flex-direction: row. */
+/* Header */
+header {
+    flex: 0 0 auto;
+    background-color: blueviolet;
+    color: #efe9e9;
+    padding: 10px 20px;
+    
+}
+
+/* Header navigation list */
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 3. Main contains article + aside side by side */
 main {
     flex-direction: row;
 }
 
-/* 4. Ensure the <main> tag keeps an automatic height and width, by applying the flex: auto property to it. */
+/* 4. Allow main to auto-size */
 main {
     flex: auto;
-    overflow: hidden; /* Prevent article/aside scrollbars from affecting main */
+    overflow: hidden;
 }
 
-/* 5. Content (<article>) takes ⅔ of the width and aside takes ⅓. */
-/* Apply flex: 2 to <article> (2 boxes) */
+/* 5. Article takes 2/3, aside takes 1/3 */
 article {
     flex: 2;
+    padding: 20px;
 }
 
-/* Apply flex: 1 to <aside> (1 box) */
 aside {
     flex: 1;
+    padding: 20px;
+    background: #f3f3f3;
 }
 
-/* 6. Ensure the user can scroll within <article> and <aside>. */
+/* 6. Both should scroll internally */
 article, aside {
     overflow-y: auto;
+}
+
+/* Table appearance (allowed modification) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+thead {
+    background: #ba4444;
 }
