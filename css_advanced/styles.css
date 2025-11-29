@@ -1,0 +1,352 @@
+/* --- Global Reset & Variables --- */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #C271FF; /* Violet */
+    --text-color: #071629;    /* Dark Blue */
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+/* --- Header & Hero --- */
+.header-hero {
+    /* Ensure you have this image in your folder */
+    background-image: url('Background.png'); 
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 50px;
+    color: var(--white);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo {
+    /* Corrected: Removed generated pixels, used responsive height */
+    height: 30px; 
+    width: auto;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 30px;
+    font-size: 12px;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero Content --- */
+.hero {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 80px; /* Adjusted size for better fit */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.hero-subtext {
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.highlight-word {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* --- Pros Profile Section --- */
+.profile-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.profile-card {
+    text-align: center;
+    width: 200px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes image round */
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* --- Testimonial Section --- */
+.testimonial-section {
+    background-color: var(--primary-color);
+    padding: 60px 0;
+    color: var(--white);
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.testimonial-img img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-text blockquote {
+    font-size: 20px;
+    font-style: italic;
+    margin: 0 0 20px 0;
+}
+
+/* --- Popular Tutorials Section --- */
+.tutorials-section {
+    
+    padding: 60px 0;
+    text-align: center;
+}
+
+.tutorials-section h2 {
+    color: var(--text-color);
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.tutorials-section h2 span {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.tutorials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.tutorial-card {
+    /* Basic card styling */
+}
+
+.card-thumb {
+    width: 100%;
+    height: auto;
+}
+
+.tutorial-card h3 {
+    margin: 15px 0;
+    color: var(--text-color);
+}
+
+.tutorial-card .desc {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.author img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.author h4 {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+.footer-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars {
+    color: var(--primary-color);
+}
+
+.time {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* --- Membership Section --- */
+.membership-section {
+    background-color: #071629;
+    padding: 60px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.membership-section h2 {
+    margin-bottom: 50px;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.member-item img {
+    width: 40px;
+    margin-bottom: 15px;
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+.faq-item h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.faq-item p {
+    color: #888;
+    line-height: 1.6;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #071629;
+    padding: 50px 0;
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    height: 30px;
+}
+
+.social-icons i {
+    font-size: 24px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* --- Simple Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hero-text {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+    
+    .flex-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
